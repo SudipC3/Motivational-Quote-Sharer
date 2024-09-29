@@ -41,3 +41,13 @@ Follow these instructions to run the project locally:
 
    ```bash
    git clone https://github.com/yourusername/Motivational-Quote-Sharer.git
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Motivational-Quote-Sharer
+
+3. Open the index.html file in your preferred web browser:
+
+   ```bash
+   open index.html
