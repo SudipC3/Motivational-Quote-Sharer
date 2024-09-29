@@ -18,14 +18,6 @@ Welcome to the **Motivational Quote Sharer**! This is a simple and responsive we
 - **Fetch API** to get quotes from the external API.
 - **Font Awesome** for icons.
 
-## Screenshots
-
-### Light Mode
-![Light Mode](path/to/light-mode-screenshot.png)
-
-### Dark Mode
-![Dark Mode](path/to/dark-mode-screenshot.png)
-
 ## Getting Started
 
 Follow these instructions to run the project locally:
