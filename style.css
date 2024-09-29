@@ -1,34 +1,39 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.5s, color 0.5s;
 }
-
 
 body {
     background: #41295a;
+    color: #fff;
+    font-family: "Philosopher", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
 }
 
 .wrapper {
     background-color: #fff;
-    width: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 700px;
     padding: 40px;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
-    z-index: -1;
+    position: relative;
+    color: #41295a;
 }
 
-.wrapper h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    font-family: "Philosopher", sans-serif;
+.heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #41295a; /* Ensure the heading is visible */
 }
-
 
 .heading::after {
     content: '';
@@ -36,49 +41,35 @@ body {
     height: 3px;
     border-radius: 3px;
     background-color: #41295a;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin: 10px auto;
 }
 
 blockquote {
-    font-size: 26px;
+    font-size: 24px;
     min-height: 60px;
-    font-family: "Mulish", sans-serif;
     margin: 25px 0;
-}
-
-blockquote::before,
-blockquote::after {
-    content: '"';
+    font-family: "Mulish", sans-serif;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    color: #41295a; /* Ensure the quote is visible */
 }
 
 .author {
     display: block;
     margin-top: 10px;
-    float: right;
-    position: relative;
     font-weight: bold;
     font-family: "Philosopher", sans-serif;
-}
-
-.author::before {
-    content: '';
-    width: 20px;
-    height: 2px;
-    background-color: #41295a;
-    position: absolute;
-    top: 50%;
-    left: -30px;
+    text-align: right;
+    color: #41295a; /* Ensure the author is visible */
 }
 
 .buttons {
-    width: 100%;
-    margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    font-family: "Philosopher", sans-serif;
+    gap: 10px;
+    margin-top: 30px;
 }
 
 .buttons button {
@@ -91,7 +82,6 @@ blockquote::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
     cursor: pointer;
     font-size: 15px;
 }
@@ -99,4 +89,49 @@ blockquote::after {
 .buttons button i {
     margin-right: 10px;
     font-size: 20px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #eaeaea;
+}
+
+.dark-mode .wrapper {
+    background-color: #333;
+    color: #eaeaea;
+}
+
+.dark-mode .heading::after {
+    background-color: #eaeaea;
+}
+
+.dark-mode blockquote,
+.dark-mode .author {
+    color: #eaeaea;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    blockquote {
+        font-size: 20px;
+    }
+
+    .buttons button {
+        width: 100px;
+        height: 45px;
+        font-size: 14px;
+    }
 }
